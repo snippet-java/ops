@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command="kubectl get pods --namespace=kubedemo"
+source setup.config
+command="kubectl get pods --namespace=${namespace_name}"
 echo $command
 $command

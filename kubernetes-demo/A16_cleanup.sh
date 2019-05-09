@@ -1,7 +1,8 @@
 #!/bin/bash
-command1="oc delete deploy/kube-nodejs --namespace=kubedemo"
+source setup.config
+command1="kubectl delete deploy/${application_name} --namespace=${namespace_name}"
 echo $command1
 $command1
 
-echo 'oc delete -f ./kubedemo-namespace.yaml'
-oc delete -f ./kubedemo-namespace.yaml
+echo 'kubectl delete -f ./kubedemo-namespace.yaml'
+kubectl delete -f ./kubedemo-namespace.yaml

@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command='kubectl --namespace=kubedemo scale deployment kube-nodejs --replicas=2'
+source setup.config
+command="kubectl --namespace=${namespace_name} scale deployment ${application_name} --replicas=2"
 echo $command 
 $command

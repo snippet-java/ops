@@ -1,4 +1,4 @@
 #!/bin/bash
-
+source setup.config
 cd node-demo
-docker build . -t alkesh/kube-nodejs:v1
+docker build . -t $image_name

@@ -4,20 +4,20 @@ metadata:
   labels:
     app: kube-nodejs
   name: kube-nodejs
-  namespace: kubedemo
+  namespace: kube-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kube-nodejs  
+      app: kube-nodejs
   template:
     metadata:
       labels:
         app: kube-nodejs
     spec:    
       containers:
-        - name: kube-nodejs        
-          image: alkesh/kube-nodejs:v1
+        - name: kube-nodejs
+          image: demo/kube-nodejs:v1
           livenessProbe:
             httpGet:
               port: http

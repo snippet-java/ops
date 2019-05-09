@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command='kubectl --namespace=kubedemo rollout history deployment kube-nodejs'
+source setup.config
+command="kubectl --namespace=${namespace_name} rollout history deployment ${application_name}"
 echo $command
 $command

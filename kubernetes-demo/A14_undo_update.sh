@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command='kubectl --namespace=kubedemo rollout undo deployment/kube-nodejs'
- echo $command
+source setup.config
+command="kubectl --namespace=${namespace_name} rollout undo deployment/${application_name}"
+echo $command
 $command

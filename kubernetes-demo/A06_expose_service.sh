@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command='kubectl --namespace=kubedemo expose deployment --port=8081 kube-nodejs --type=LoadBalancer'
+source setup.config
+command="kubectl --namespace=${namespace_name} expose deployment --port=${port} ${application_name} --type=LoadBalancer"
 echo $command
 $command

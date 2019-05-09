@@ -1,6 +1,6 @@
 #!/bin/bash
-
-command='kubectl --namespace=kubedemo set image deployment/kube-nodejs kube-nodejs=alkesh/kube-nodejs:v2'
+source setup.config
+command="kubectl --namespace=${namespace_name} set image deployment/${application_name} ${application_name}=${update_image_name=demo/kube-nodejs:v2}"
 
 echo $command
 $command
