@@ -18,4 +18,4 @@ sed -i "s+http://:.*/');+http://:$port/');+g" node-demo/hello-http.js
 sed -i "s/EXPOSE .*/EXPOSE $port/g" node-demo/Dockerfile
 
 echo "Login to console, please enter password when it prompts"
-oc login -u admin
+oc login -u cluster_admin
