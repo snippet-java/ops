@@ -4,20 +4,20 @@ metadata:
   labels:
     app: os-nodejs
   name: os-nodejs
-  namespace: osdemo
+  namespace: os-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: os-nodejs  
+      app: os-nodejs
   template:
     metadata:
       labels:
         app: os-nodejs
     spec:    
       containers:
-        - name: os-nodejs        
-          image: alkesh/os-nodejs:v1
+        - name: os-nodejs
+          image: demo/os-nodejs:v1
           livenessProbe:
             httpGet:
               port: http

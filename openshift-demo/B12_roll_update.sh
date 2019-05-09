@@ -1,6 +1,6 @@
 #!/bin/bash
-
-command='oc --namespace=osdemo set image deployment/os-nodejs os-nodejs=alkesh/os-nodejs:v2'
+source setup.config
+command="oc --namespace=${namespace_name} set image deployment/${application_name} ${application_name}=${update_image_name}"
 
 echo $command
 $command

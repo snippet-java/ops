@@ -1,7 +1,7 @@
 var http = require('http');
 http.createServer(function (req, res) {
     var now = new Date();
-    res.end('Namaste kube from Node.js! ' + now.toJSON() + ' on ' + process.env.HOSTNAME  + '\n');
+    res.end('Hello kube from Node.js! ' + now.toJSON() + ' on ' + process.env.HOSTNAME  + '\n');
     
 }).listen(8081, '0.0.0.0');
 console.log('Server running at http://:8081/');

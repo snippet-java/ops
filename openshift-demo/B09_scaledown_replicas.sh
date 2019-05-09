@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command='oc --namespace=osdemo scale deployment os-nodejs --replicas=2'
+source setup.config
+command="oc --namespace=${namespace_name} scale deployment ${application_name} --replicas=2"
 echo $command 
 $command

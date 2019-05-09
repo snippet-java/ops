@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command='os --namespace=osdemo rollout history deployment os-nodejs'
+source setup.config
+command="oc --namespace=${namespace_name} rollout history deployment ${application_name}"
 echo $command
 $command

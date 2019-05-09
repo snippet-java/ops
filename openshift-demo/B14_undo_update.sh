@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command='oc --namespace=osdemo rollout undo deployment/os-nodejs'
- echo $command
+source setup.config
+command="oc --namespace=${namespace_name} rollout undo deployment/${application_name}"
+echo $command
 $command

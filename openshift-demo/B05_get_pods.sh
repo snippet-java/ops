@@ -1,5 +1,5 @@
 #!/bin/bash
-
-command="oc get pods -n osdemo"
+source setup.config
+command="oc get pods -n ${namespace_name}"
 echo $command
 $command

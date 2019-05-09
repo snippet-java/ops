@@ -1,5 +1,6 @@
 #!/bin/bash
-command='docker build -t alkesh/kube-nodejs:v2 .'
+source setup.config
+command="docker build -t ${update_image_name} ."
 echo $command
 cd node-demo
 $command
