@@ -1,0 +1,26 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  labels:
+    app: nodejs-ex
+    name: myapp
+  name: nodejs-ex
+  namespace: ossidemo
+spec:
+  host: nodejs-ex-ossidemo.apps.openshift247.bluecloudcourse.com
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Allow
+    termination: edge
+  to:
+    kind: Service
+    name: nodejs-ex
+    weight: 100
+  wildcardPolicy: None
