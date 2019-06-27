@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <title>Form Calculator Add Example</title>
+</head>
+<body>
+  <form name="myForm" action="" onsubmit="return ajax();"method="post">
+      <input type="text" name="username">
+      
+      <span id="result"></span>
+      <br>
+      <input type="submit" value="Submit">
+  </form>
+  <script>
+    function ajax(){
+      var formdata = document.forms["myForm"]["username"].value;
+      
+            
+      xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange=function(){
+        if(xmlhttp.readyState==4 && xmlhttp.status==200){
+          document.getElementById("result").innerHTML=xmlhttp.responseText;
+        };
+      };
+      xmlhttp.open("POST","",true);
+      xmlhttp.send(formdata);
+      return false;
+    }
+  </script>
+</body>
+</html>
