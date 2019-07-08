@@ -4,7 +4,7 @@ metadata:
   labels:
     app: kube-nodejs
   name: kube-nodejs
-  namespace: kube-demo
+  namespace: node-demo
 spec:
   replicas: 1
   selector:
