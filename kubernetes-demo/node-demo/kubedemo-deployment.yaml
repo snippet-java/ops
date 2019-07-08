@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: kube-nodejs
+  name: kube-nodejs
+  namespace: node-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-nodejs
+  template:
+    metadata:
+      labels:
+        app: kube-nodejs
+    spec:    
+      containers:
+        - name: kube-nodejs
+          image: demo/kube-nodejs:v1
+          livenessProbe:
+            httpGet:
+              port: http
+              path: /
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3          
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8081
+            initialDelaySeconds: 10
+            periodSeconds: 3
+          ports:
+          - containerPort: 8081
+      
